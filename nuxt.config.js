@@ -40,7 +40,7 @@ export default {
     {
       src: '~/plugins/lottie-player.js',
       mode: 'client'
-    }
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -56,7 +56,15 @@ export default {
     '@nuxtjs/google-fonts',
     // font awesome
     '@nuxtjs/fontawesome',
+    // google analytics
+    '@nuxtjs/google-analytics'
   ],
+
+  // google analytics settings
+  googleAnalytics: {
+    id: 'UA-209930606-1',
+    dev: process.env.NODE_ENV !== 'production',
+  },
 
   // fontawesome config
   fontawesome: {

@@ -1,10 +1,10 @@
 <template>
-  <header class="relative z-10 max-w-screen-lg xl:max-w-screen-xl mx-auto">
+  <header class="relative z-10 max-w-screen-lg xl:max-w-screen-xl mx-auto mt-0">
     <div class="px-4 sm:px-6 md:px-8 mb-14 sm:mb-20 xl:mb-24">
       <div class="border-b border-gray-200 py-4 flex items-center justify-between mb-16 sm:mb-20 -mx-4 px-4 sm:mx-0 sm:px-0">
         <!-- logo -->
         <nuxt-link to="/">
-          <bs-logo class="w-48" />
+          <bs-logo class="w-40 sm:w-48" />
         </nuxt-link>
 
         <div class="flex items-center space-x-4 sm:space-x-10 ml-6 sm:ml-10">
