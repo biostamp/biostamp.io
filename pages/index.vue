@@ -161,7 +161,14 @@ export default {
   },
 
   mounted() {
-    setTimeout(() => {
+    setTimeout(this.setAnimationColors, 10)
+    setTimeout(this.setAnimationColors, 50)
+    setTimeout(this.setAnimationColors, 100)
+    setTimeout(this.setAnimationColors, 200)
+  },
+
+  methods: {
+    setAnimationColors() {
       // get node list of path with fill
       const nodeListLight = this.$refs.player.renderRoot.querySelectorAll('path[fill="rgb(250,80,75)"]')
       const nodeListDark = this.$refs.player.renderRoot.querySelectorAll('path[fill="rgb(207,49,39)"]')
@@ -169,7 +176,7 @@ export default {
       // set new color
       nodeListLight.forEach((node) => node.setAttribute('fill', '#FFD369'))
       nodeListDark.forEach((node) => node.setAttribute('fill', '#DFAB2D'))
-    }, 20)
-  },
+    }
+  }
 }
 </script>
