@@ -5,17 +5,17 @@
       <!-- left content -->
       <div class="flex-1">
         <!-- title -->
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl leading-none font-extrabold tracking-tight text-bs-dark-black mt-10 sm:mt-14">
-          Zero Passwords Network
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-bs-dark-black mt-10 sm:mt-14">
+          Everyone <span class="text-bs-yellow-800">Wins</span>!
         </h1>
 
-        <h2 class="text-2xl sm:text-4xl lg:text-5xl leading-none font-extrabold tracking-tight text-bs-dark-black mt-4 mb-8 sm:mt-8 sm:mb-10">
-          Quickly enhance your application with advanced biometrics authentication.
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-bs-dark-black mt-4 mb-8 sm:mb-10">
+          Increase customer satisfaction, security, and revenues.
         </h2>
 
         <!-- some description -->
         <p class="max-w-screen-lg text-lg sm:text-2xl sm:leading-10 font-medium mb-10 sm:mb-16">
-          Biostamp is a self-hosted, open-source solution that provides easy-to-use advanced biometric authentication. So join us towards a <span class="text-bs-yellow-800">#passwordless</span> future.
+          Biostamp is a self-hosted, open-source biometric identity solution that provides ready-made, customizable components for quickly implementing advanced biometric identity. Join us towards a <span class="text-bs-yellow-800">#passwordless</span> future.
         </p>
 
         <!-- cta -->
@@ -28,7 +28,7 @@
       <div class="flex items-center justify-center">
         <lottie-player
           ref="player"
-          src="https://assets5.lottiefiles.com/packages/lf20_gysrp57x.json"
+          src="https://assets6.lottiefiles.com/private_files/lf30_4s1xpqrh.json"
           background="transparent"
           speed="1"
           class="w-[400px]"
@@ -159,24 +159,5 @@ export default {
       ]
     }
   },
-
-  mounted() {
-    setTimeout(this.setAnimationColors, 10)
-    setTimeout(this.setAnimationColors, 50)
-    setTimeout(this.setAnimationColors, 100)
-    setTimeout(this.setAnimationColors, 200)
-  },
-
-  methods: {
-    setAnimationColors() {
-      // get node list of path with fill
-      const nodeListLight = this.$refs.player.renderRoot.querySelectorAll('path[fill="rgb(250,80,75)"]')
-      const nodeListDark = this.$refs.player.renderRoot.querySelectorAll('path[fill="rgb(207,49,39)"]')
-
-      // set new color
-      nodeListLight.forEach((node) => node.setAttribute('fill', '#FFD369'))
-      nodeListDark.forEach((node) => node.setAttribute('fill', '#DFAB2D'))
-    }
-  }
 }
 </script>
