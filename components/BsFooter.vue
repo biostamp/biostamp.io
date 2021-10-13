@@ -57,7 +57,7 @@ export default {
             {
               component: 'a',
               text: 'Twitter',
-              link: 'https://www.twitter.com/biostamp'
+              link: 'https://www.twitter.com/biostamp_io'
             },
             {
               component: 'a',
