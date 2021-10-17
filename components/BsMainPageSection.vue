@@ -1,6 +1,6 @@
 <template>
   <section :id="id">
-    <div class="px-4 sm:px-6 md:px-8 mb-10 sm:mb-16 md:mb-20">
+    <div class="px-4 sm:px-6 md:px-8">
       <div
         class="w-12 h-12 flex items-center justify-center rounded-xl mb-8 bg-gradient-to-br from-yellow-500 to-pink-600"
       >

@@ -74,10 +74,11 @@ export default {
       brands: [
         // 'faFacebookF',
         // 'faInstagram',
-        // 'faTwitter',
+        'faTwitter',
         // 'faLinkedinIn',
         // 'faYoutube',
         'faGithub',
+        'faDiscord'
         // 'faTiktok',
         // 'faJs',
         // 'faVuejs',

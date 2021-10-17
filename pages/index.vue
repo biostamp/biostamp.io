@@ -50,17 +50,16 @@
     >
       <template #icon>
         <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          <path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
         </svg>
       </template>
 
-      <template #rawBody="{ on }">
+      <template #rawBody>
         <div class="flex flex-col sm:flex-row sm:space-x-20 text-xl font-medium items-center">
           <div>
-            <div class="space-y-8">
+            <div class="space-y-14">
               <div
                 class="flex items-center space-x-5 hover:bg-bs-yellow hover:bg-opacity-25 p-2 rounded-xl cursor-pointer"
-                v-on="on"
                 @click="changeStep(0)"
               >
                 <div class="flex-none flex items-center justify-center bg-bs-yellow w-10 h-10 rounded-full text-white">1</div>
@@ -107,8 +106,6 @@
     <!-- benefits -->
     <bs-main-page-section
       id="benefits"
-      main-color="yellow"
-      secondary-color="pink"
       title="Benefits"
       subtitle="Powerful, Secured, and Flexible"
       description="Passwords are dangerous to your business. Not only are they insecure and prone to phishing, but they also have a significant impact on revenue and customer experience. Take advantage of Biostamp to seamlessly enhance your application with passwordless. "
@@ -122,7 +119,7 @@
       </template>
 
       <template #rawBody>
-        <div class="grid gap-10 grid-cols-1 sm:grid-cols-3">
+        <div class="grid gap-10 grid-cols-1 sm:grid-cols-3 mt-10 sm:mt-16 md:mt-20">
           <bs-grdient-lock
             v-for="benefit in benefits"
             :key="benefit.title"
@@ -163,14 +160,64 @@
       </template>
     </bs-main-page-section>
 
+    <!-- extendable -->
+    <bs-main-page-section
+      id="extendable"
+      title="extendable"
+      subtitle="See something that is missing? Join our open-source community"
+      description="The open-source community built Biostamp to support their needs. Are you missing something in particular? Join our maintainers' community, help us brainstorm around cool features and ideas, contribute to the project and let everyone enjoy an improved version of Biostamp."
+      cta-text="Join The Waitlist"
+      cta-link="https://share-eu1.hsforms.com/1sUdHi1sqSUmwKaS9BuXfmgew3dz"
+    >
+      <template #icon>
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </template>
+
+      <template #rawBody>
+        <div class="flex flex-col sm:flex-row space-x-0 sm:space-x-14 space-y-10 sm:space-y-0 items-center justify-center sm:justify-start mt-10 sm:mt-16 md:mt-20">
+          <!-- twitter -->
+          <a href="https://twitter.com/biostamp_io" target="_blank" class="flex flex-col items-center space-y-2 sm:space-y-4 text-center">
+            <!-- icon -->
+            <fa :icon="['fab', 'twitter']" class="text-6xl text-[#1DA1F2]" />
+
+            <!-- title -->
+            <div class="text-xl font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-br from-bs-yellow-500 to-pink-600">stay in touch</div>
+
+            <!-- description -->
+            <div>We want to stay connected with out community on Twitter. Follow <span class="text-bs-yellow-500">@biostamp_io</span> for all the latest updates.</div>
+          </a>
+
+          <!-- github -->
+          <a href="https://github.com/biostamp/biostamp" target="_blank" class="flex flex-col items-center space-y-2 sm:space-y-4 text-center">
+            <!-- icon -->
+            <fa :icon="['fab', 'github']" class="text-6xl text-[#333333]" />
+
+            <!-- title -->
+            <div class="text-xl font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-br from-bs-yellow-500 to-pink-600">star &amp; contribute</div>
+
+            <!-- description -->
+            <div>We are built by the community for the community. ⭐️ Help us make a positive impact by contributing and staring <span class="text-bs-yellow-500">Biostamp</span> ⭐️</div>
+          </a>
+
+          <!-- discord -->
+          <a href="https://discord.gg/Y7DfNExk" target="_blank" class="flex flex-col items-center space-y-2 sm:space-y-4 text-center">
+            <!-- icon -->
+            <fa :icon="['fab', 'discord']" class="text-6xl text-[#7289DA]" />
+
+            <!-- title -->
+            <div class="text-xl font-semibold uppercase text-transparent bg-clip-text bg-gradient-to-br from-bs-yellow-500 to-pink-600">make an impact</div>
+
+            <!-- description -->
+            <div>Join our community for the latest updates and join discussions about the future of <span class="text-bs-yellow-500">passwordless</span>.</div>
+          </a>
+        </div>
+      </template>
+    </bs-main-page-section>
+
     <!-- integrate to anything
     <section id="integrate-to-anything"></section>
-
-    quick to get started with
-    <section id="quick-to-start"></section>
-
-    extendable
-    <section id="extendable"></section>
 
     loved by developers
     <section id="loved-by-developers"></section>
