@@ -60,6 +60,11 @@
             <div class="space-y-14">
               <div
                 class="flex items-center space-x-5 hover:bg-bs-yellow hover:bg-opacity-25 p-2 rounded-xl cursor-pointer"
+                :class="{
+                  'bg-bs-yellow': step === 0,
+                  'bg-opacity-25': step === 0,
+                  'bg-transparent': step !== 0,
+                }"
                 @click="changeStep(0)"
               >
                 <div class="flex-none flex items-center justify-center bg-bs-yellow w-10 h-10 rounded-full text-white">1</div>
@@ -67,6 +72,11 @@
               </div>
               <div
                 class="flex items-center space-x-5 hover:bg-bs-yellow hover:bg-opacity-25 p-2 rounded-xl cursor-pointer"
+                :class="{
+                  'bg-bs-yellow': step === 1,
+                  'bg-opacity-25': step === 1,
+                  'bg-transparent': step !== 1,
+                }"
                 @click="changeStep(1)"
               >
                 <div class="flex-none flex items-center justify-center bg-bs-yellow w-10 h-10 rounded-full text-white">2</div>
@@ -74,6 +84,11 @@
               </div>
               <div
                 class="flex items-center space-x-5 hover:bg-bs-yellow hover:bg-opacity-25 p-2 rounded-xl cursor-pointer"
+                :class="{
+                  'bg-bs-yellow': step === 2,
+                  'bg-opacity-25': step === 2,
+                  'bg-transparent': step !== 2,
+                }"
                 @click="changeStep(2)"
               >
                 <div class="flex-none flex items-center justify-center bg-bs-yellow w-10 h-10 rounded-full text-white">3</div>
@@ -164,7 +179,7 @@
     <bs-main-page-section
       id="extendable"
       title="extendable"
-      subtitle="See something that is missing? Join our open-source community"
+      subtitle="Join our open-source community and make an impact"
       description="The open-source community built Biostamp to support their needs. Are you missing something in particular? Join our maintainers' community, help us brainstorm around cool features and ideas, contribute to the project and let everyone enjoy an improved version of Biostamp."
       cta-text="Join The Waitlist"
       cta-link="https://share-eu1.hsforms.com/1sUdHi1sqSUmwKaS9BuXfmgew3dz"
@@ -233,6 +248,7 @@ export default {
   data() {
     return {
       step: 0,
+      intervalId: null,
       lotties: [
         'https://assets2.lottiefiles.com/private_files/lf30_yvrgw8tc.json',
         'https://assets9.lottiefiles.com/private_files/lf30_ja8jdyae.json',
@@ -283,6 +299,20 @@ export default {
     displayLottie() {
       return this.lotties[this.step]
     }
+  },
+
+  mounted() {
+    this.intervalId = setInterval(() => {
+      if (this.step + 1 === this.lotties.length) {
+        this.changeStep(0)
+      } else {
+        this.changeStep(this.step + 1)
+      }
+    }, 8000)
+  },
+
+  beforeDestroy() {
+    clearInterval(this.intervalId)
   },
 
   // component functions
