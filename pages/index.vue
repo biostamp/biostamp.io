@@ -39,6 +39,71 @@
       </div>
     </section>
 
+    <!-- how does it work -->
+    <bs-main-page-section
+      id="how-does-it-work"
+      title="how does it work"
+      subtitle="Quick to get started, easy to grow"
+      description="We've focused all our efforts on creating an elegant development experience to make development easy and fun. Use pre-made components to integrate passwordless authentication in minutes."
+      cta-text="Join The Waitlist"
+      cta-link="https://share-eu1.hsforms.com/1sUdHi1sqSUmwKaS9BuXfmgew3dz"
+    >
+      <template #icon>
+        <svg xmlns="http://www.w3.org/2000/svg" class="text-white h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </template>
+
+      <template #rawBody="{ on }">
+        <div class="flex flex-col sm:flex-row sm:space-x-20 text-xl font-medium items-center">
+          <div>
+            <div class="space-y-8">
+              <div
+                class="flex items-center space-x-5 hover:bg-bs-yellow hover:bg-opacity-25 p-2 rounded-xl cursor-pointer"
+                v-on="on"
+                @click="changeStep(0)"
+              >
+                <div class="flex-none flex items-center justify-center bg-bs-yellow w-10 h-10 rounded-full text-white">1</div>
+                <div>Deploy Biostamp BaaS</div>
+              </div>
+              <div
+                class="flex items-center space-x-5 hover:bg-bs-yellow hover:bg-opacity-25 p-2 rounded-xl cursor-pointer"
+                @click="changeStep(1)"
+              >
+                <div class="flex-none flex items-center justify-center bg-bs-yellow w-10 h-10 rounded-full text-white">2</div>
+                <div>Implement and customize a pre-made component</div>
+              </div>
+              <div
+                class="flex items-center space-x-5 hover:bg-bs-yellow hover:bg-opacity-25 p-2 rounded-xl cursor-pointer"
+                @click="changeStep(2)"
+              >
+                <div class="flex-none flex items-center justify-center bg-bs-yellow w-10 h-10 rounded-full text-white">3</div>
+                <div>Enjoy biometric passwordless authentication</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <lottie-player
+              v-for="url in lotties"
+              :key="url"
+              :src="url"
+              :class="{
+                'block': url === displayLottie,
+                'hidden': url !== displayLottie,
+              }"
+              background="transparent"
+              speed="1"
+              class="transition-all w-[20rem] sm:w-[30rem]"
+              loop
+              autoplay
+            >
+            </lottie-player>
+          </div>
+        </div>
+      </template>
+    </bs-main-page-section>
+
     <!-- benefits -->
     <bs-main-page-section
       id="benefits"
@@ -98,20 +163,21 @@
       </template>
     </bs-main-page-section>
 
-    <!-- integrate to anything -->
+    <!-- integrate to anything
     <section id="integrate-to-anything"></section>
 
-    <!-- quick to get started with -->
+    quick to get started with
     <section id="quick-to-start"></section>
 
-    <!-- extendable -->
+    extendable
     <section id="extendable"></section>
 
-    <!-- loved by developers -->
+    loved by developers
     <section id="loved-by-developers"></section>
 
-    <!-- community stats -->
+    community stats
     <section id="community-stats"></section>
+    -->
   </div>
 </template>
 
@@ -119,6 +185,12 @@
 export default {
   data() {
     return {
+      step: 0,
+      lotties: [
+        'https://assets2.lottiefiles.com/private_files/lf30_yvrgw8tc.json',
+        'https://assets9.lottiefiles.com/private_files/lf30_ja8jdyae.json',
+        'https://assets9.lottiefiles.com/private_files/lf30_po8jzesa.json'
+      ],
       benefits: [
         {
           rotate: '-2',
@@ -157,6 +229,19 @@ export default {
           description: 'Built in end-to-end security and data privacy. You have full control over your data!',
         },
       ]
+    }
+  },
+
+  computed: {
+    displayLottie() {
+      return this.lotties[this.step]
+    }
+  },
+
+  // component functions
+  methods: {
+    changeStep(step) {
+      this.step = step
     }
   },
 }
