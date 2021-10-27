@@ -1012,10 +1012,10 @@
   resolved "https://registry.yarnpkg.com/@lokidb/loki/-/loki-2.1.0.tgz#f707e184016ce57d6dd12013938c33f9c540960e"
   integrity sha512-u2VH/4h4kZww23bak5I/oRai8VqIZCSuqiLbuSHpYXHB9Na5E9KNazh59prgUyvMzfooY7XKiHejbKVxFoAEOQ==
 
-"@lottiefiles/lottie-player@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@lottiefiles/lottie-player/-/lottie-player-1.4.1.tgz#f3df1d0c57a0979b5c56329b35ecc7a663c04808"
-  integrity sha512-ZlzByCGL1mRFVOR1Go6EaangOKycHgSimb4J92cnqgmRy38pc3ffQwO/3crOSe21EDlRyQ3CMGW8jn3jUFrEMA==
+"@lottiefiles/lottie-player@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@lottiefiles/lottie-player/-/lottie-player-1.4.4.tgz#248369960879f4896338ed9315df1d222e8be35e"
+  integrity sha512-QCk6VFaSXlni8/ruqsmkIMgguC3lwtS3ioUdxi0p0FskaeJ0YQO83qjc5ZeXAzL0tedd13Wi6lGl+ySxr0kqfg==
   dependencies:
     "@types/pako" "^1.0.1"
     lit-element "^2.3.1"
