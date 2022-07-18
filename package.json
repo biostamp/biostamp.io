@@ -15,7 +15,7 @@
     "@lottiefiles/lottie-player": "^1.4.5",
     "@nuxt/content": "^1.15.0",
     "@nuxtjs/axios": "^5.13.6",
-    "core-js": "^3.19.1",
+    "core-js": "^3.23.5",
     "nuxt": "^2.15.7"
   },
   "devDependencies": {
